@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|c:\\users\\posne\\documents\\unity\\unityprojects\\assignment_2_2d\\assets\\assignment_2\\runtime\\scripts\\managers\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\managers\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|c:\\users\\posne\\documents\\unity\\unityprojects\\assignment_2_2d\\assets\\assignment_2\\runtime\\scripts\\managers\\physicsmanagersimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\managers\\physicsmanagersimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\assets\\assignment_2\\runtime\\scripts\\objects\\balloon_fx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\objects\\balloon_fx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\assets\\assignment_2\\runtime\\scripts\\enums\\collisiontypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\enums\\collisiontypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\assets\\assignment_2\\runtime\\scripts\\managers\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\managers\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\assets\\assignment_2\\runtime\\scripts\\spawners\\balloonspawnersimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\spawners\\balloonspawnersimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\assets\\assignment_2\\runtime\\scripts\\spawners\\harpoonlaunchersimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C09AEFFC-EDC0-9274-20D5-3CEC559E0657}|Assembly-CSharp.csproj|solutionrelative:assets\\assignment_2\\runtime\\scripts\\spawners\\harpoonlaunchersimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Manager.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\Manager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\Manager.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\Manager.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\Manager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:59:48.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Balloon_FX.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Objects\\Balloon_FX.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Objects\\Balloon_FX.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Objects\\Balloon_FX.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Objects\\Balloon_FX.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAADwv1QAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T21:27:00.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CollisionTypes.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Enums\\CollisionTypes.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Enums\\CollisionTypes.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Enums\\CollisionTypes.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Enums\\CollisionTypes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T13:48:54.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BalloonSpawnerSimple.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\BalloonSpawnerSimple.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\BalloonSpawnerSimple.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\BalloonSpawnerSimple.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\BalloonSpawnerSimple.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAUwHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T22:42:39.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HarpoonLauncherSimple.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\HarpoonLauncherSimple.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\HarpoonLauncherSimple.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\HarpoonLauncherSimple.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Spawners\\HarpoonLauncherSimple.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowGQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T22:41:31.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SceneManager.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\SceneManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\SceneManager.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\SceneManager.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\SceneManager.cs",
+              "ViewState": "AgIAAK0BAAAAAAAAAADwv9UBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T21:26:41.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PhysicsManagerSimple.cs",
+              "DocumentMoniker": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\PhysicsManagerSimple.cs",
+              "RelativeDocumentMoniker": "Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\PhysicsManagerSimple.cs",
+              "ToolTip": "C:\\Users\\posne\\Documents\\Unity\\UnityProjects\\Assignment_2_2D\\Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\PhysicsManagerSimple.cs",
+              "RelativeToolTip": "Assets\\Assignment_2\\Runtime\\Scripts\\Managers\\PhysicsManagerSimple.cs",
+              "ViewState": "AgIAAJICAAAAAAAAAADwv58CAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T22:40:26.252Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
