@@ -1,119 +1,141 @@
 using UnityEngine;
 
+/// <summary>
+/// Spawns balloons at regular intervals in "valley" areas of the terrain,
+/// using the custom 2D physics manager and scene manager logic.
+/// </summary>
 public class BalloonSpawnerSimple : MonoBehaviour
 {
+    [Header("Balloon Spawn Settings")]
+    [Tooltip("Prefab used to instantiate new balloons.")]
     public GameObject balloonPrefab;
+
+    [Tooltip("Maximum number of balloons allowed concurrently.")]
     public int maxBalloons = 10;
+
+    [Tooltip("Time interval (seconds) between automatic spawns.")]
     public float spawnRate = 2f;
-    public bool enableDebugging = true;
-    public float xMinOffset = 0f;
-    public float yMinOffset = 0f;
-    public float xMaxOffset = 0f;
-    public float yMaxOffset = 0f;
+
+    [Tooltip("Collision radius assigned to each balloon (for custom physics).")]
     public float balloonRadius = 0.5f;
-    private float nextSpawnTime;
+
+    [Tooltip("Whether to show debug logs or visual debugging lines.")]
+    public bool enableDebugging = true;
+
+    [Header("Parenting/Environment")]
+    [Tooltip("If true, newly spawned balloons are parented under the environment root, if found.")]
+    public bool parentBalloonsToEnvironment = true;
+
+    // Internal references
     private PhysicsManagerSimple physicsManager;
     private SceneManager sceneManager;
 
-    private Vector2 minX;  // Start of the valley (X, Y)
-    private Vector2 valleyEnd;    // End of the valley (X, Y)
-    private float valleyTopY;     // Y position for the top of the cliffs
-    private float valleyBottomY;  // Y position for the valley floor (top of the mesh)
-
-    private Vector3 valleyBottomLeft;
-    private Vector3 valleyBottomRight;
-    private Vector3 valleyTopLeft;
-    private Vector3 valleyTopRight;
-
+    // Internal timing
+    private float nextSpawnTime;
 
     void Start()
     {
+        // Find references
         physicsManager = FindObjectOfType<PhysicsManagerSimple>();
         sceneManager = FindObjectOfType<SceneManager>();
 
         if (physicsManager == null)
-        {
-            Debug.LogError("PhysicsManager not found.");
-        }
+            Debug.LogError("[BalloonSpawnerSimple] PhysicsManagerSimple not found in the scene.");
         if (sceneManager == null)
-        {
-            Debug.LogError("SceneManager not found.");
-        }
+            Debug.LogError("[BalloonSpawnerSimple] SceneManager not found in the scene.");
 
-        // Delay calculation to ensure terrain is generated
-        Invoke("CalculateValleyBounds", 1f);  // Delayed to allow terrain to generate
-
+        // Start spawn timer
         nextSpawnTime = Time.time + spawnRate;
     }
 
     void Update()
     {
-        CalculateValleyBounds();
         // Spawn balloons continuously until max balloons are reached
-        if (Time.time >= nextSpawnTime && physicsManager.balloons.Count < maxBalloons)
+        if (Time.time >= nextSpawnTime && physicsManager != null && physicsManager.balloons.Count < maxBalloons)
         {
             SpawnBalloon();
             nextSpawnTime = Time.time + spawnRate;
-        }       
-       
-    }
-
-    void SpawnBalloon()
-    {
-        // Use calculated valley bounds for random spawn position
-        float randomX = Random.Range(minX.x, valleyEnd.x);
-        float randomY = Random.Range(valleyBottomLeft.y, valleyTopRight.y);
-
-        Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-
-        // Check if the spawn position is clear of other balloons
-        if (!IsCollidingWithExistingBalloon(spawnPosition))
-        {
-            GameObject newBalloon = Instantiate(balloonPrefab, spawnPosition, Quaternion.identity);
-            physicsManager.AddPhysicsObject(newBalloon, new Vector3(0, 1f, 0), balloonRadius, ObjectType.Balloon);
         }
     }
 
+    /// <summary>
+    /// Spawns a single balloon in a "valley" area of the terrain,
+    /// skipping the tower region, ensuring it doesn't collide with existing balloons.
+    /// </summary>
+    void SpawnBalloon()
+    {
+        if (sceneManager == null || physicsManager == null) return;
+
+        // The maximum vertical bound for spawns. 
+        // (We assume sceneManager.maxY is the top in local coords.)
+        float maxSpawnY = sceneManager.maxY;
+
+        // Ask SceneManager for a random valley spawn location
+        Vector3 spawnPos = sceneManager.GetRandomValleySpawnPosition(maxSpawnY);
+
+        if (spawnPos == Vector3.zero)
+        {
+            // No valid location found
+            if (enableDebugging) Debug.Log("[BalloonSpawnerSimple] No valid valley location found.");
+            return;
+        }
+
+        // Check collision with existing balloons
+        if (!IsCollidingWithExistingBalloon(spawnPos))
+        {
+            // Create the balloon
+            GameObject newBalloon = Instantiate(balloonPrefab);
+
+            // Optionally parent it to the environment root if that approach is used
+            if (parentBalloonsToEnvironment)
+            {
+                // Attempt to find an object named "EnvironmentRoot" 
+                // (assuming your SceneManager uses that approach).
+                GameObject envRoot = GameObject.Find("EnvironmentRoot");
+                if (envRoot != null)
+                {
+                    newBalloon.transform.SetParent(envRoot.transform, false);
+                }
+            }
+
+            // Set localPosition so it appears in the same local coordinate space as the environment
+            newBalloon.transform.localPosition = spawnPos;
+
+            // Register balloon with PhysicsManagerSimple
+            physicsManager.AddPhysicsObject(
+                newBalloon,
+                Vector3.up,     // initial upward velocity
+                balloonRadius,
+                ObjectType.Balloon
+            );
+
+            if (enableDebugging)
+            {
+                Debug.Log($"[BalloonSpawnerSimple] Spawned balloon at local pos {spawnPos}");
+            }
+        }
+        else
+        {
+            if (enableDebugging) Debug.Log("[BalloonSpawnerSimple] Collision detected, skipping spawn.");
+        }
+    }
+
+    /// <summary>
+    /// Checks if the given spawn position overlaps any existing balloon (by radius).
+    /// </summary>
     bool IsCollidingWithExistingBalloon(Vector3 spawnPosition)
     {
+        if (physicsManager == null) return false;
+
         foreach (var balloon in physicsManager.balloons)
         {
             float distance = Vector3.Distance(balloon.position, spawnPosition);
-            if (distance < balloon.radius * 2)
+            // If distance < sum of radii, it's colliding
+            if (distance < (balloon.radius + balloonRadius))
             {
                 return true;
             }
         }
         return false;
-    }
-
-    private void CalculateValleyBounds()
-    {
-
-        float minX = sceneManager.minX + xMinOffset;
-        float maxX = sceneManager.maxX + xMaxOffset;
-        float minY = sceneManager.minY + yMinOffset;
-        float maxY = sceneManager.maxY + yMaxOffset;
-
-
-        // Set the valley bounds based on the detected valley bottom and sides
-        this.minX = new Vector2(minX, minY);
-        valleyEnd = new Vector2(maxX, maxY);
-
-        // Debug log the calculated valley bounds
-        Debug.Log($"Valley Bounds: Start({this.minX.x}, {this.minX.y}), End({valleyEnd.x}, {valleyEnd.y}), TopY: {valleyTopY}, BottomY: {valleyBottomY}");
-        valleyBottomLeft = new Vector3(minX, minY, 0);
-        valleyBottomRight = new Vector3(maxX, minY, 0);
-        valleyTopLeft = new Vector3(minX, maxY, 0);
-        valleyTopRight = new Vector3(maxX, maxY, 0);
-
-        if (enableDebugging)
-        {
-            // Draw lines connecting the four corners of the valley bounds
-            Debug.DrawLine(valleyBottomLeft, valleyBottomRight, Color.green);  // Bottom boundary
-            Debug.DrawLine(valleyTopLeft, valleyTopRight, Color.green);        // Top boundary
-            Debug.DrawLine(valleyBottomLeft, valleyTopLeft, Color.green);      // Left boundary
-            Debug.DrawLine(valleyBottomRight, valleyTopRight, Color.green);    // Right boundary
-        }
     }
 }

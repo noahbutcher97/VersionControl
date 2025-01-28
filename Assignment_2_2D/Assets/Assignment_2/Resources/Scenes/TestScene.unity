@@ -364,12 +364,9 @@ MonoBehaviour:
   balloonPrefab: {fileID: 1970107071636540686, guid: 8924948f2753caa49bfd643d3d6ccde9, type: 3}
   maxBalloons: 100
   spawnRate: 0.05
-  enableDebugging: 1
-  xMinOffset: -0.25
-  yMinOffset: 2
-  xMaxOffset: -3
-  yMaxOffset: 2
   balloonRadius: 0.8
+  enableDebugging: 1
+  parentBalloonsToEnvironment: 1
 --- !u!1 &1426098868
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,20 +569,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828e5e81d1cfe94faa5788ba7bad013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 1614751223}
-  playerPrefab: {fileID: 7643064419086468694, guid: 67de811321a583c4396625ebf23a8767, type: 3}
   mainCamera: {fileID: 884107705}
-  numPoints: 100
-  descentRate: 5
-  valleyLengthPercent: 5.6
-  heightOffset: 0.51
-  slopePointDensity: 10
+  lineRenderer: {fileID: 1614751223}
   dirtMaterial: {fileID: 2100000, guid: 6279a7f8166c8424ea4878926fa7578a, type: 2}
   groundMaterial: {fileID: 2100000, guid: 380a2b40a46add34988d96f575185248, type: 2}
-  groundVerticalOffset: 1
-  groundXOffsetScale: 1
-  sharpAngleThreshold: 1
-  groundMesh: {fileID: 0}
+  playerPrefab: {fileID: 7643064419086468694, guid: 67de811321a583c4396625ebf23a8767, type: 3}
+  terrainResolution: 100
+  noiseScale: 0.1
+  amplitude: 30
+  baseY: 5
+  percentageTowerXPadding: 0.14
+  groundVerticalOffset: 3
+  sharpAngleThreshold: 0.44
+  groundXOffsetScale: 0.21
+  forcedCameraSize: 0
+  baseCameraSize: 14.5
+  somePadding: 0
+  obstaclePrefab: {fileID: 1970107071636540686, guid: a8144d979e60c28458dd341ffde28ed4, type: 3}
+  obstacleCount: 0
+  fallbackTowerWidth: 2
+  allowRegenerateWithKey: 1
+  maxValleySlope: 0.29
+  towerClearPadding: 2
+  minGroundPadding: 0.5
+  useRandomSeed: 1
+  seedMin: -200
+  seedMax: 200
+  seed: 0
   minX: 0
   maxX: 0
   minY: 0

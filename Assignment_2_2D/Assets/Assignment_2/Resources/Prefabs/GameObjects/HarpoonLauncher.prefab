@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 740100553625403772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.81, y: 0.21499991, z: 0}
+  m_LocalPosition: {x: -19.669373, y: 0.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -212,10 +212,10 @@ MonoBehaviour:
   harpoonRadius: 0.01
   harpoonMass: 1
   customGravity: -9.8
-  minForce: 5
+  minForce: 10
   maxForce: 40
   useMouse: 1
-  launchSpeedTime: 6
+  launchSpeedTime: 2.15
 --- !u!1 &5819416811959164378
 GameObject:
   m_ObjectHideFlags: 0

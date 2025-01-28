@@ -51,7 +51,7 @@ MonoBehaviour:
   audioSource: {fileID: 8693341061193176623}
   popSprite: {fileID: 21300000, guid: efc98874e0e709a4db9e5eeffbda3c16, type: 3}
   plusOneSprite: {fileID: 21300000, guid: 5c1f80ed8dae2c04a8fd834c5bf4cde4, type: 3}
-  popSound: {fileID: 8300000, guid: 5755f67ab8d0ea042b1533f22ff93c30, type: 3}
+  popSound: {fileID: 8300000, guid: 9e85f244f6ddadc419d7ffb0ca0a51b0, type: 3}
   popDuration: 0.19
   floatSpeed: 5.88
   fadeSpeed: 2.2
